@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  display: flex;
+  min-height: 1000px;
+  width: 100%;
+  position: relative;
+}
+footer {
+  position: relative;
+  width: 100%;
+  align-self: flex-end;
+  height: 100%;
+  z-index: 2;
+}

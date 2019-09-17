@@ -1,0 +1,94 @@
+header{
+    height: 95px;
+    position: absolute;
+}
+
+a{
+    text-decoration: none;
+}
+
+.MenuTop {
+  width: 100%;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: normal;
+  display: inline-block;
+  cursor: default;
+  position: fixed;
+  background-color: white;
+    z-index: 2;
+  }
+
+.MenuIzquierda {
+  display: inline-block;
+}
+
+.MenuIzquierda .AreaTitulo {
+  list-style: none;
+  display: inline;
+  padding: 0;
+  }
+
+.MenuIzquierda .Logo {
+  background-color: black;
+  padding: 0px 60px;
+  line-height: 95px;
+  display: inline-block;
+  margin: 0;
+  font-size: 2.6em;
+  letter-spacing: 0.1em;
+  cursor:pointer;
+}
+.MenuIzquierda .Logo a{
+  color: #76926f;
+}
+
+.MenuIzquierda .Logo:hover {
+  background-color: #76926f;
+}
+
+.MenuIzquierda .Logo:hover > a{
+  color: #fff;
+  }
+
+.MenuIzquierda .Nombre {
+  margin: 0px 40px;
+  font-size: 1.8em;
+  letter-spacing: 0.07em;
+  display: inline-block;
+}
+
+.MenuDerecha {
+  list-style: none;
+  margin-right: 4%;
+  display: inline-block;
+  float: right;
+  margin-top: 40px;
+
+}
+
+.MenuDerecha .AreaMenu {
+  list-style: none;
+  padding: 0;
+  display: inline;
+}
+
+.MenuDerecha li{
+  display: inline-block;
+  margin: 0px 0px;
+  }
+
+.MenuDerecha li a{
+  color: #b5b0b0;
+  font-size: 1em;
+  margin: 0px  15px;
+  padding: 38px 0px;
+  }
+
+.MenuDerecha li:hover{
+  cursor: pointer;
+}
+
+.MenuDerecha li:hover > a{
+  cursor: pointer;
+  color: #5e7d56;
+}
