@@ -7,11 +7,26 @@
     <title>Marco Reinoso</title>
   </head>
   <body>
+
+    <header>
     @include('menu')
-    @include('content')
+    </header>
+    <div class="container">
+      <nav>
+      @include('content')
+      </nav>
+      <section>
+      @include('content')
+    </section>
+    </div>
+
+    <footer>
+      @include('footer')
+    </footer>
+
 
     <script src="http://localhost:35729/livereload.js"></script>
   </body>
-  @include('footer')
+
 
 </html>
