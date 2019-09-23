@@ -14,5 +14,4 @@
   </body>
   @include('footer')
 
-
 </html>
