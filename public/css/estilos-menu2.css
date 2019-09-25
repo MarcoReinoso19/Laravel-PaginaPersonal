@@ -1,0 +1,82 @@
+.Menu {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 90px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.Menu a{
+  text-decoration: none;
+}
+
+.LeftMenu {
+  background-color: #000;
+  width: 8%;
+  text-align: center;
+}
+
+.LeftMenu .Logo {
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+.Mr {
+    background-color: #000;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #76926f;
+    line-height: 90px;
+    font-size: 2.5em;
+    letter-spacing: -2px;
+
+}
+
+.Logo:hover  > a{
+  transition: 0.3s;
+  background-color: #76926f;
+  color: #fff;
+  }
+
+.MiddleMenu {
+  width: 62%;
+
+}
+
+.MiddleMenu .Nombre {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 5%;
+  margin-right: 5%;
+  cursor: default;
+  font-size: 1.8em;
+  letter-spacing: 0.07em;
+
+}
+
+.RightMenu {
+  width: 30%;
+  }
+
+.RightMenu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 100px;
+}
+
+.RightMenu li a{
+  color: #b5b0b0;
+  font-size: 1em;
+}
+
+.RightMenu li:hover > a{
+  cursor: pointer;
+  color: #5e7d56;
+}
