@@ -15,9 +15,7 @@
       <nav>
       @include('content')
       </nav>
-      <section>
-      @include('content')
-    </section>
+      
     </div>
 
     <footer>
