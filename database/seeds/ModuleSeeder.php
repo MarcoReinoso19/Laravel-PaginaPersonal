@@ -12,6 +12,7 @@ class ModuleSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('modules')->truncate();
 
         DB::table('modules')->insert([

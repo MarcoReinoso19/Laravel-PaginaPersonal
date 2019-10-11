@@ -12,6 +12,7 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('companies')->truncate();
 
         DB::table('companies')->insert([
