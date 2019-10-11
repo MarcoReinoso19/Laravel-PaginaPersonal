@@ -34,3 +34,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact.contact');
 });
+
+Route::resource('/roles', 'RolesController');
+
+Route::resource('/consultas',  'TablasController');

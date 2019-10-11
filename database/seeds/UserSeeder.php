@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\User;
 
 class UserSeeder extends Seeder
 {
@@ -15,22 +16,22 @@ class UserSeeder extends Seeder
 
         DB::table('users')->truncate();
 
-        DB::table('users')->insert([
-          'name' => 'Marco Reinoso',
+
+        User::create(['name' => 'Marco Reinoso',
           'email' => 'marcoreinoso19@hotmail.com',
-          'password' => '123',
+          'password' => '123'
         ]);
 
-        DB::table('users')->insert([
+        User::create([
           'name' => 'Mateo Reinoso',
           'email' => 'mateoreinoso@gmail.com',
-          'password' => '1234',
+          'password' => '1234'
         ]);
 
-        DB::table('users')->insert([
+        User::create([
           'name' => 'Juan Reinoso',
           'email' => 'juanreinoso17@hotmail.com',
-          'password' => 'abc',
+          'password' => 'abc'
         ]);
     }
 }
