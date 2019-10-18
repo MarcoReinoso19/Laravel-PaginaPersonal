@@ -25,12 +25,12 @@
 
           <?php foreach ($users as $users): ?>
           <tr>
-            <td>{{$users->id}}</td>
-            <td>{{$users->name}}</td>
-            <td>{{$users->email}}</td>
-            <td>{{$users->password}}</td>
-            <td>{{ $users->created_at }}</td>
-            <td>{{ $users->updated_at }}</td>
+            <td>  {{  $users->id  }}  </td>
+            <td>  {{  $users->name  }}  </td>
+            <td>  {{  $users->email  }}  </td>
+            <td>  {{  $users->password  }}  </td>
+            <td>  {{ $users->created_at }}  </td>
+            <td>  {{ $users->updated_at }}  </td>
             <td>
               <a href="#">Editar</a>
               <a href="#">Eliminar</a>

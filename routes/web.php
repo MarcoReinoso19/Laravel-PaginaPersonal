@@ -40,4 +40,39 @@ Route::resource('/roles', 'RolesController');
 
 Route::resource('/consultas',  'TablasController');*/
 
-Route::get('/consultas', 'TablasController@index');
+/*Route::get('/consultas', 'TablasController@index');*/
+
+Route::get('/dashboard', function () {
+  return view('dashboard');
+});
+
+
+Route::get('/tables', function () {
+  return view('tables.tables');
+});
+
+Route::get('/tables', 'UserController@index');
+
+Route::get('/tableUsers', function () {
+  return view('tableUsers');
+});
+
+Route::get('/tableUsers', 'UserController@index');
+
+Route::get('/tableRoles', function () {
+  return view('tableRoles');
+});
+
+Route::get('/tableRoles', 'RoleController@index');
+
+Route::get('/tableModules', function () {
+  return view('tableModules');
+});
+
+Route::get('/tableModules', 'ModuleController@index');
+
+Route::get('/tableCompanies', function () {
+  return view('tableCompanies');
+});
+
+Route::get('/tableCompanies', 'CompanyController@index');

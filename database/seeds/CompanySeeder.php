@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+use App\Company;
+
 class CompanySeeder extends Seeder
 {
     /**
@@ -15,10 +17,17 @@ class CompanySeeder extends Seeder
 
         DB::table('companies')->truncate();
 
-        DB::table('companies')->insert([
+        Company::create([
           'name'=> 'Reinosoft',
           'nit' => 'N001',
           'email' => 'soporte@reinosoft.com',
         ]);
+
+        /* Creacion de semillas sin Eloquent
+        DB::table('companies')->insert([
+          'name'=> 'Reinosoft',
+          'nit' => 'N001',
+          'email' => 'soporte@reinosoft.com',
+        ]);*/
     }
 }

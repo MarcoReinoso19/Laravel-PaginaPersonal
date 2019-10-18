@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Company;
 
 class Company_UserSeeder extends Seeder
 {
@@ -12,6 +14,8 @@ class Company_UserSeeder extends Seeder
     public function run()
     {
       DB::table('companies_users')->truncate();
+
+
 
       DB::table('companies_users')->insert([
         'company_id' =>'1',
@@ -26,6 +30,6 @@ class Company_UserSeeder extends Seeder
       DB::table('companies_users')->insert([
         'company_id' =>'1',
         'user_id' =>'3',
-      ]);
+      ]); 
     }
 }

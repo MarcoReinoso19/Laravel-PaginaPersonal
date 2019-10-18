@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Module;
 
 class ModuleSeeder extends Seeder
 {
@@ -15,14 +16,15 @@ class ModuleSeeder extends Seeder
 
         DB::table('modules')->truncate();
 
-        DB::table('modules')->insert([
-         'name'=>'Contact',
-         'route'=>'Home/Contact/',
+        Module::create([
+          'name'=>'Contact',
+          'route'=>'Home/Contact/'
         ]);
 
-        DB::table('modules')->insert([
-         'name'=>'About Us',
-         'route'=>'Home/About Us/',
+        Module::create([
+          'name'=>'About Us',
+          'route'=>'Home/About Us/'
         ]);
+
     }
 }

@@ -19,8 +19,6 @@ class TablasController extends Controller
     public function index()
     {
 
-
-
         /*LLamada a las tablas directamente a la base de datos
         $users = DB::table('users')->get();
         $roles = DB::table('roles')->get();
