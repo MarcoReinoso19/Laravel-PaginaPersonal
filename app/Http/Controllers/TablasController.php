@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
+use App\User;
+use App\Role;
+use App\Company;
+use App\Module;
 
 class TablasController extends Controller
 {
@@ -14,16 +18,23 @@ class TablasController extends Controller
      */
     public function index()
     {
+
+
+
+        /*LLamada a las tablas directamente a la base de datos
         $users = DB::table('users')->get();
         $roles = DB::table('roles')->get();
         $modules = DB::table('modules')->get();
-        $companies = DB::table('companies')->get();
+        $companies = DB::table('companies')->get();*/
 
-        return view('consultas',
-        compact('users'),
-        compact('roles'),
-        compact('modules'),
-        compact('companies'));
+        //Utilizando Eloquent
+        $users = User::all();
+        $roles = Role::all();
+        $modules = Module::all();
+        $companies = Company::all();
+
+        return view('consultas', compact('users', 'roles', 'modules', 'companies'));
+
     }
 
     /**

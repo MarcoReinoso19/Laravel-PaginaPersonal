@@ -35,6 +35,9 @@ Route::get('/contact', function () {
     return view('contact.contact');
 });
 
+/* Crear rutas sin implemnentar Eloquent
 Route::resource('/roles', 'RolesController');
 
-Route::resource('/consultas',  'TablasController');
+Route::resource('/consultas',  'TablasController');*/
+
+Route::get('/consultas', 'TablasController@index');
