@@ -27,13 +27,21 @@
         <td>  {{ $users->updated_at }}  </td>
         <td>
 
-            <button class="btn btn-warning" data-toggle="modal" data-target="#modalEdicion"> <i class="fas fa-edit"></i></button>
-          
+            <button name= "editButton"class="btn btn-warning" data-toggle="modal" data-target="#modalEdicion"
+
+              data-name="{{ $users->name}}"
+              data-email="{{ $users->email}}"
+              data-password="{{ $users->password}}"
+              data-id="{{ $users->id}}">
+            <i class="fas fa-edit"></i></button>
+
+
+
         </td>
         <td>
           <form class="" action="{{url('table', $users->id)}}" method="post">
             {{csrf_field()}}
-            <button class="btn btn-danger"> <i class="fas fa-trash-alt"></i></button>
+            <button name="deleteButton" class="btn btn-danger"> <i class="fas fa-trash-alt"></i></button>
           </form>
         </td>
       </tr>

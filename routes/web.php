@@ -88,3 +88,10 @@ Route::get('/table', 'TableController@create');
 Route::post('/table', 'TableController@store');
 
 Route::post('/table/{id}', 'TableController@destroy');
+
+//Route::get('/table/{id}', 'TableController@edit');
+
+Route::resource('/table', 'TableController');
+
+
+//Route::match(['get', 'put'], '/table/{id}', 'TableController@update' );

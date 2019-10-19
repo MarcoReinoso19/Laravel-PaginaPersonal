@@ -64,9 +64,7 @@ class TableController extends Controller
      */
     public function show($id)
     {
-      //$user = User::findOrFail($id);
-      //dd('Entre');
-      //return view('table' , compact($id));
+
     }
 
     /**
@@ -87,10 +85,19 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+      $id = $request->user_id;
+
+        $user = User::find($id);
+
+        $user->name = $request->nameUpdate;
+        $user->email = $request->emailUpdate;
+        $user->password = $request->passwordUpdate;
+        $user->save();
 
 
+        return redirect('/table');
     }
 
     /**

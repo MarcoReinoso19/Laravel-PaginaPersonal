@@ -69,50 +69,58 @@
         </button>
       </div>
 
+<form action=" {{ route('table.update', 'test') }}" method="post">
+  {{method_field('patch')}}
+  {{csrf_field()}}
 
-        <div class="modal-body">
-          <input type="text" hidden="" id="idPersona">
-          <label>Nombre</label>
-          <input type="text" name="nameUpdate" id="nameUpdate" class="form-control input-sm" value="{{ old('name, $user->name')}}" >
-          <label>Email</label>
-          <input type="text" name="emailUpdate" id="emailUpdate" class="form-control input-sm" placeholder=""="1234565">
-          <label>Password</label>
-          <input type="text" name="passwordUpdate" id="passwordUpdate" class="form-control input-sm">
-        </div>
+  <div class="modal-body">
+    <input type="hidden" name="user_id"  id="idUser" value="">
+    <label>Nombre</label>
+    <input type="text" name="nameUpdate" id="nameUpdate" class="form-control input-sm">
+    <label>Email</label>
+    <input type="text" name="emailUpdate" id="emailUpdate" class="form-control input-sm" placeholder=""="1234565">
+    <label>Password</label>
+    <input type="text" name="passwordUpdate" id="passwordUpdate" class="form-control input-sm">
+  </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-warning">Actualizar</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  </div>
 
-
-
-
-
-
-
+</form>
 
 
     </div>
   </div>
 </div>
 
+<script type="text/javascript">
+$('#modalEdicion').on('show.bs.modal', function (e) {
+console.log(event.relatedTarget);
+
+  var button = $(e.relatedTarget)
+  var id = button.data('id')
+  var name = button.data('name')
+  var email = button.data('email')
+  var password = button.data('password')
+  var modal = $(this)
+
+console.log(id);
+
+  modal.find('.modal-body #idUser').val(id)
+  modal.find('.modal-body #nameUpdate').val(name)
+  modal.find('.modal-body #emailUpdate').val(email)
+  modal.find('.modal-body #passwordUpdate').val(password)
+
+
+
+// do something...
+})
+</script>
+
 
   </body>
 
-  <script type="text/javascript">
-      $(document).ready(function(){
-        $('#tabla').load({{ url('tabla') }});
-      });
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#guardarnuevo').click(function(){
-        nombre =$('#nombre').val();
-        email =$('#email').val();
-        password =$('#password').val();
-          agregarDatos(nombre, email, password);
-      });
-    });
-</script>
+
 </html>
