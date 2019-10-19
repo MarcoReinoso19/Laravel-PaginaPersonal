@@ -18,7 +18,9 @@ class UserController extends Controller
         $users = User::all();
 
 
-        return view('tableUsers')->with('users', $users);
+        //return view('tableUsers')->with('users', $users);
+
+        return view('tableUsers', compact('users'));
     }
 
     /**

@@ -11,6 +11,9 @@
 
   <title>SB Admin 2 - Tables</title>
 
+  <link rel="stylesheet" href="/alertifyjs/css/alertify.css">
+  <link rel="stylesheet" href="/alertifyjs/css/themes/default.css">
+
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -328,7 +331,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          
+
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -428,6 +431,8 @@
     </div>
   </div>
 
+  <script src="alertifyjs/alertify.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
 
   <!-- Bootstrap core JavaScript-->

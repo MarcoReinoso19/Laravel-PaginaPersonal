@@ -76,3 +76,15 @@ Route::get('/tableCompanies', function () {
 });
 
 Route::get('/tableCompanies', 'CompanyController@index');
+
+
+
+Route::get('/table', function() {
+  return view('table');
+});
+
+Route::get('/table', 'TableController@create');
+
+Route::post('/table', 'TableController@store');
+
+Route::post('/table/{id}', 'TableController@destroy');
