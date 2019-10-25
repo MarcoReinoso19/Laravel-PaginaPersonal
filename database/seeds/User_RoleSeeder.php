@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\UserRole;
 
 class User_RoleSeeder extends Seeder
 {
@@ -14,19 +16,19 @@ class User_RoleSeeder extends Seeder
 
       DB::table('users_roles')->truncate();
 
-      DB::table('users_roles')->insert([
+      UserRole::create([
         'user_id' =>'1',
-        'role_id' =>'1',
+        'role_id' =>'1'
       ]);
 
-      DB::table('users_roles')->insert([
+      UserRole::create([
         'user_id' =>'3',
-        'role_id' =>'2',
+        'role_id' =>'2'
       ]);
 
-      DB::table('users_roles')->insert([
+      UserRole::create([
         'user_id' =>'2',
-        'role_id' =>'3',
+        'role_id' =>'3'
       ]);
     }
 }

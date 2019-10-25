@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\RoleModule;
 
 class Role_ModuleSeeder extends Seeder
 {
@@ -13,24 +15,24 @@ class Role_ModuleSeeder extends Seeder
     {
       DB::table('roles_modules')->truncate();
 
-      DB::table('roles_modules')->insert([
+      RoleModule::create([
         'role_id' =>'1',
-        'module_id' =>'1',
+        'module_id' =>'1'
       ]);
 
-      DB::table('roles_modules')->insert([
+      RoleModule::create([
         'role_id' =>'1',
-        'module_id' =>'2',
+        'module_id' =>'2'
       ]);
 
-      DB::table('roles_modules')->insert([
+      RoleModule::create([
         'role_id' =>'2',
-        'module_id' =>'1',
+        'module_id' =>'1'
       ]);
 
-      DB::table('roles_modules')->insert([
+      RoleModule::create([
         'role_id' =>'3',
-        'module_id' =>'2',
+        'module_id' =>'2'
       ]);
 
 

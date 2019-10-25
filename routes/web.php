@@ -77,6 +77,28 @@ Route::get('/tableCompanies', function () {
 
 Route::get('/tableCompanies', 'CompanyController@index');
 
+Route::get('/tableUsersRoles', function () {
+  return view('tableUsersRoles');
+});
+
+Route::get('/tableUsersRoles', 'UsersRolesController@index');
+
+Route::get('/tableRolesModules', function () {
+  return view('tableRolesModules');
+});
+
+Route::get('/tableRolesModules', 'RolesModulesController@index');
+
+Route::get('/tableCompaniesUsers', function () {
+  return view('tableCompaniesUsers');
+});
+
+Route::get('/tableCompaniesUsers', 'CompaniesUsersController@index');
+
+
+
+
+
 
 
 Route::get('/table', function() {

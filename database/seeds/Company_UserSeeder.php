@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Company;
+use App\CompanyUser;
 
 class Company_UserSeeder extends Seeder
 {
@@ -17,19 +17,19 @@ class Company_UserSeeder extends Seeder
 
 
 
-      DB::table('companies_users')->insert([
+      CompanyUser::create([
         'company_id' =>'1',
-        'user_id' =>'1',
+        'user_id' =>'1'
       ]);
 
-      DB::table('companies_users')->insert([
+      CompanyUser::create([
         'company_id' =>'1',
-        'user_id' =>'2',
+        'user_id' =>'2'
       ]);
 
-      DB::table('companies_users')->insert([
+      CompanyUser::create([
         'company_id' =>'1',
-        'user_id' =>'3',
-      ]); 
+        'user_id' =>'3'
+      ]);
     }
 }

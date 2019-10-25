@@ -1,4 +1,5 @@
 @extends('tableRoot')
+
 @section('DataTable')
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -6,7 +7,7 @@
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Companies</h6>
+      <h6 class="m-0 font-weight-bold text-primary">UsersRoles</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -14,8 +15,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
+              <th>User_ID</th>
+              <th>Role_ID</th>
               <th>Created At</th>
               <th>Updated_At</th>
               <th>Actions</th>
@@ -24,8 +25,8 @@
           <tfoot>
             <tr>
               <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
+              <th>User_ID</th>
+              <th>Role_ID</th>
               <th>Created At</th>
               <th>Updated_At</th>
               <th>Actions</th>
@@ -33,13 +34,13 @@
           </tfoot>
           <tbody>
 
-            <?php foreach ($companies as $companies): ?>
+            <?php foreach ($usersroles as $usersroles): ?>
             <tr>
-              <td>  {{  $companies->id  }}  </td>
-              <td>  {{  $companies->name  }}  </td>
-              <td>  {{  $companies->email  }}  </td>
-              <td>  {{ $companies->created_at }}  </td>
-              <td>  {{ $companies->updated_at }}  </td>
+              <td>  {{  $usersroles->id  }}  </td>
+              <td>  {{  $usersroles->user_id  }}  </td>
+              <td>  {{  $usersroles->role_id  }}  </td>
+              <td>  {{ $usersroles->created_at }}  </td>
+              <td>  {{ $usersroles->updated_at }}  </td>
               <td>
                 <a href="#">Editar</a>
                 <a href="#">Eliminar</a>
@@ -55,4 +56,5 @@
 
 </div>
 <!-- /.container-fluid -->
+
 @endsection
