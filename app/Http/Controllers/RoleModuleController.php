@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\RoleModule;
 
-class RolesModulesController extends Controller
+class RoleModuleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +37,14 @@ class RolesModulesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = request()->all();
+
+      RoleModule::create([
+        'role_id' => $data['role_id'],
+        'module_id' => $data['module_id']
+      ]);
+
+      return back();
     }
 
     /**
@@ -69,9 +76,17 @@ class RolesModulesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+      $id = $request->rolemodule_id;
+
+      $rolemodule = RoleModule::find($id);
+
+      $rolemodule->role_id = $request->role_idUpdate;
+      $rolemodule->module_id = $request->module_idUpdate;
+      $rolemodule->save();
+
+      return back();
     }
 
     /**
@@ -82,6 +97,8 @@ class RolesModulesController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $rolemodule = RoleModule::findOrFail($id);
+      $rolemodule -> delete();
+      return back();
     }
 }

@@ -40,7 +40,6 @@ Route::resource('/roles', 'RolesController');
 
 Route::resource('/consultas',  'TablasController');*/
 
-/*Route::get('/consultas', 'TablasController@index');*/
 
 Route::get('/dashboard', function () {
   return view('dashboard');
@@ -81,39 +80,60 @@ Route::get('/tableUsersRoles', function () {
   return view('tableUsersRoles');
 });
 
-Route::get('/tableUsersRoles', 'UsersRolesController@index');
+Route::get('/tableUsersRoles', 'UserRoleController@index');
 
 Route::get('/tableRolesModules', function () {
   return view('tableRolesModules');
 });
 
-Route::get('/tableRolesModules', 'RolesModulesController@index');
+Route::get('/tableRolesModules', 'RoleModuleController@index');
 
 Route::get('/tableCompaniesUsers', function () {
   return view('tableCompaniesUsers');
 });
 
-Route::get('/tableCompaniesUsers', 'CompaniesUsersController@index');
-
-
-
-
-
+Route::get('/tableCompaniesUsers', 'CompanyUserController@index');
 
 
 Route::get('/table', function() {
   return view('table');
 });
 
+
+//Rutas para Tabla de Pruebas
 Route::get('/table', 'TableController@create');
 
 Route::post('/table', 'TableController@store');
 
 Route::post('/table/{id}', 'TableController@destroy');
 
-//Route::get('/table/{id}', 'TableController@edit');
-
 Route::resource('/table', 'TableController');
 
 
-//Route::match(['get', 'put'], '/table/{id}', 'TableController@update' );
+//Rutas para User
+Route::post('/tableUsers/{id}', 'UserController@destroy');
+Route::resource('/tableUsers', 'UserController');
+
+//Rutas para Company
+Route::post('/tableCompanies/{id}', 'CompanyController@destroy');
+Route::resource('/tableCompanies', 'CompanyController');
+
+//Rutas para Module
+Route::post('/tableModules/{id}', 'ModuleController@destroy');
+Route::resource('/tableModules', 'ModuleController');
+
+//Rutas para Role
+Route::post('/tableRoles/{id}', 'RoleController@destroy');
+Route::resource('/tableRoles', 'RoleController');
+
+//Rutas para UserRole
+Route::post('/tableUsersRoles/{id}', 'UserRoleController@destroy');
+Route::resource('/tableUsersRoles', 'UserRoleController');
+
+//Rutas para RoleModule
+Route::post('/tableRolesModules/{id}', 'RoleModuleController@destroy');
+Route::resource('/tableRolesModules', 'RoleModuleController');
+
+//Rutas para CompanyUser
+Route::post('/tableCompaniesUsers/{id}', 'CompanyUserController@destroy');
+Route::resource('/tableCompaniesUsers', 'CompanyUserController');

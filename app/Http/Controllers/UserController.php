@@ -41,7 +41,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->all();
+
+        User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => $data['password']
+      ]);
+
+        return back();
     }
 
     /**
@@ -73,9 +81,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->user_id;
+
+        $user = User::find($id);
+
+        $user->name = $request->nameUpdate;
+        $user->email = $request->emailUpdate;
+        $user->password = $request->passwordUpdate;
+        $user->save();
+
+        return back();
     }
 
     /**
@@ -86,6 +103,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user -> delete();
+        return back();
     }
 }

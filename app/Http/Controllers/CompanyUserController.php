@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CompanyUser;
 
-class CompaniesUsersController extends Controller
+class CompanyUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +37,14 @@ class CompaniesUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = request()->all();
+
+      CompanyUser::create([
+        'company_id' => $data['company_id'],
+        'user_id' => $data['user_id']
+      ]);
+
+      return back();
     }
 
     /**
@@ -69,9 +76,17 @@ class CompaniesUsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+      $id = $request->companyuser_id;
+
+      $companyuser = CompanyUser::find($id);
+
+      $companyuser->company_id = $request->company_idUpdate;
+      $companyuser->user_id = $request->user_idUpdate;
+      $companyuser->save();
+
+      return back();
     }
 
     /**
@@ -82,6 +97,8 @@ class CompaniesUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $companyuser = CompanyUser::findOrFail($id);
+      $companyuser -> delete();
+      return back();
     }
 }

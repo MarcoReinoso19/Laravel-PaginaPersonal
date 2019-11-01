@@ -9,10 +9,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Tables</title>
 
-  <link rel="stylesheet" href="/alertifyjs/css/alertify.css">
-  <link rel="stylesheet" href="/alertifyjs/css/themes/default.css">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ asset('alertifyjs/css/alertify.css') }}">
+  <link rel="stylesheet" href="{{ asset('alertifyjs/css/themes/default.css') }}">
+
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,7 +40,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">MR Admin <sup>MR</sup></div>
       </a>
 
       <!-- Divider -->
@@ -67,11 +69,12 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Todas las Tablas:</h6>
+            <h6 class="collapse-header">Primary Tables:</h6>
             <a class="collapse-item"  href="{{ url('tableUsers') }}">Users</a>
             <a class="collapse-item"  href="{{ url('tableRoles') }}">Roles</a>
             <a class="collapse-item"  href="{{ url('tableModules') }}">Modules</a>
             <a class="collapse-item"  href="{{ url('tableCompanies') }}">Companies</a>
+            <h6 class="collapse-header">Secondary Tables:</h6>
             <a class="collapse-item"  href="{{ url('tableUsersRoles') }}">Users_Roles</a>
             <a class="collapse-item"  href="{{ url('tableRolesModules') }}">Roles_Modules</a>
             <a class="collapse-item"  href="{{ url('tableCompaniesUsers') }}">Companies_Users</a>
@@ -334,7 +337,10 @@
 
         @yield('DataTable')
 
+
+
       </div>
+
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -377,9 +383,13 @@
     </div>
   </div>
 
-  <script src="alertifyjs/alertify.js"></script>
-  <script src="js/jquery-3.4.1.js"></script>
+
+  <script src="{{ asset('alertifyjs/alertify.js') }}"></script>
+  <script src="{{ asset('js/functions.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
+  <script src="{{ asset('js/jquery-3.4.1.js') }}"></script>
   <script src="http://localhost:35729/livereload.js"></script>
+  <script src="https://kit.fontawesome.com/248cde9816.js" crossorigin="anonymous"></script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -397,6 +407,9 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
+  @yield('scriptllenado')
+
 
 </body>
 

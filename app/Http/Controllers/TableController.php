@@ -97,7 +97,8 @@ class TableController extends Controller
         $user->save();
 
 
-        return redirect('/table');
+        //return redirect('/table');
+        return back();
     }
 
     /**

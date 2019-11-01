@@ -25,7 +25,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +36,15 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = request()->all();
+
+      Company::create([
+        'nit' => $data['nit'],
+        'name' => $data['name'],
+        'email' => $data['email'],
+      ]);
+
+      return back();
     }
 
     /**
@@ -68,9 +76,18 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->company_id;
+
+        $company = Company::find($id);
+
+        $company->nit = $request->nitUpdate;
+        $company->name = $request->nameUpdate;
+        $company->email = $request->emailUpdate;
+        $company->save();
+
+        return back();
     }
 
     /**
@@ -81,6 +98,8 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $company = Company::findOrFail($id);
+      $company -> delete();
+      return back();
     }
 }

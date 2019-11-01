@@ -37,7 +37,14 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = request()->all();
+
+      Module::create([
+        'name' => $data['name'],
+        'route' => $data['route']
+      ]);
+
+      return back();
     }
 
     /**
@@ -69,9 +76,17 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->module_id;
+
+        $module = Module::find($id);
+
+        $module->name = $request->nameUpdate;
+        $module->route = $request->routeUpdate;
+        $module->save();
+
+        return back();
     }
 
     /**
@@ -82,6 +97,8 @@ class ModuleController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $module = Module::findOrFail($id);
+      $module -> delete();
+      return back();
     }
 }

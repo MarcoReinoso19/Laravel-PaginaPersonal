@@ -39,7 +39,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = request()->all();
+
+      Role::create([
+        'name' => $data['name'],
+      ]);
+
+      return back();
     }
 
     /**
@@ -71,9 +77,16 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+      $id = $request->role_id;
+
+      $role = Role::find($id);
+
+      $role->name = $request->nameUpdate;
+      $role->save();
+
+      return back();
     }
 
     /**
@@ -84,6 +97,8 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $role = Role::findOrFail($id);
+      $role -> delete();
+      return back();
     }
 }

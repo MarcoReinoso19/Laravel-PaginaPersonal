@@ -95,29 +95,7 @@
   </div>
 </div>
 
-<script type="text/javascript">
-$('#modalEdicion').on('show.bs.modal', function (e) {
-console.log(event.relatedTarget);
 
-  var button = $(e.relatedTarget)
-  var id = button.data('id')
-  var name = button.data('name')
-  var email = button.data('email')
-  var password = button.data('password')
-  var modal = $(this)
-
-console.log(id);
-
-  modal.find('.modal-body #idUser').val(id)
-  modal.find('.modal-body #nameUpdate').val(name)
-  modal.find('.modal-body #emailUpdate').val(email)
-  modal.find('.modal-body #passwordUpdate').val(password)
-
-
-
-// do something...
-})
-</script>
 
 
   </body>
