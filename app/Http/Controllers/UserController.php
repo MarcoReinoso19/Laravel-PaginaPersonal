@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Role;
 
 class UserController extends Controller
 {
@@ -15,13 +16,22 @@ class UserController extends Controller
      */
     public function index()
     {
+
+        /*$users = User::join("users_roles","user_id","=","users.id")
+        ->join("roles","roles.id", "=", "users_roles.role_id")
+        ->select("users.id","users.name", "users.email", "users.password", "users.created_at", "users.updated_at", "roles.name as roles_name" )
+        ->get();*/
+
         $users = User::all();
+
+        $data = Role::all();
 
 
         //return view('tableUsers')->with('users', $users);
 
-        return view('tableUsers', compact('users'));
+        return view('tableUsers', compact('users', 'data'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -49,6 +59,10 @@ class UserController extends Controller
         'password' => $data['password']
       ]);
 
+        Role::create([
+
+        ]);
+
         return back();
     }
 
@@ -58,10 +72,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+     public function show($id)
+     {
+
+        $user = User::find($id);
+
+
+         return view('tableAddRoles', compact('user'));
+     }
 
     /**
      * Show the form for editing the specified resource.

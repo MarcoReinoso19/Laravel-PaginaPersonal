@@ -58,6 +58,7 @@ Route::get('/tableUsers', function () {
 
 Route::get('/tableUsers', 'UserController@index');
 
+
 Route::get('/tableRoles', function () {
   return view('tableRoles');
 });
@@ -137,3 +138,11 @@ Route::resource('/tableRolesModules', 'RoleModuleController');
 //Rutas para CompanyUser
 Route::post('/tableCompaniesUsers/{id}', 'CompanyUserController@destroy');
 Route::resource('/tableCompaniesUsers', 'CompanyUserController');
+
+
+
+Route::get('/tableUsers/{id}', 'UserController@show')
+    ->name('users.show');
+
+
+Route::resource('/tableAddRoles', 'AddRolesController');
