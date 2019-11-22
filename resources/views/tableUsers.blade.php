@@ -73,6 +73,9 @@
               </tr>
             <?php endforeach; ?>
 
+
+
+
             <!-- Modal para registros nuevos-->
             <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm" role="document">
@@ -153,6 +156,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- /.container-fluid -->
 @endsection

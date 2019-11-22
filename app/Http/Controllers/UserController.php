@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Role;
+use App\UserRole;
 
 class UserController extends Controller
 {
@@ -75,8 +76,14 @@ class UserController extends Controller
      public function show($id)
      {
 
-        $user = User::find($id);
+        /*$user = User::find($id);
+        $data = UserRole::all() -> where('user_id', '=', $id);
 
+         return view('tableAddRoles', compact('user', 'data'));*/  //Funciona
+
+
+
+         $user = User::find($id);
 
          return view('tableAddRoles', compact('user'));
      }
