@@ -59,13 +59,15 @@
 
 
                 <td style="text-align:center">
-                  <a href="{{ route('users.show', $user) }}">
+                  <!--<a href="{{ route('users.show', $user) }}"> -->
+                  <a href="{{ route('users.show', ['id' => $user->id]) }}">
+
                     <button type="submit" name= "roleButton" id="btnRole" class="btn btn-info" method="get"><i class="fas fa-user-edit"></i></button>
                   </a>
                 </td>
 
                 <td style="text-align:center">
-                  <form action="{ {url('tableUsers', $user->id)}}" method="post">
+                  <form action="{{url('tableUsers', $user->id)}}" method="post">
                     {{csrf_field()}}
                     <button name="deleteButton" id="btnDelete" class="btn btn-danger"> <i class="fas fa-trash-alt"></i></button>
                   </form>

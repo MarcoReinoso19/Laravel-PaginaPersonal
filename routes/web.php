@@ -146,3 +146,14 @@ Route::get('/tableUsers/{id}', 'UserController@show')
 
 
 Route::resource('/tableAddRoles', 'AddRolesController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', function()
+	{
+		Auth::logout();
+	Session::flush();
+		return Redirect::to('/home');
+	});

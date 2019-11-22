@@ -20,19 +20,19 @@ class UserSeeder extends Seeder
         User::create([
           'name' => 'Marco Reinoso',
           'email' => 'marcoreinoso19@hotmail.com',
-          'password' => '123'
+          'password' => bcrypt('123')
         ]);
 
         User::create([
           'name' => 'Mateo Reinoso',
           'email' => 'mateoreinoso@gmail.com',
-          'password' => '1234'
+          'password' => bcrypt('1234')
         ]);
 
         User::create([
           'name' => 'Juan Reinoso',
           'email' => 'juanreinoso17@hotmail.com',
-          'password' => 'abc'
+          'password' => bcrypt('abc')
         ]);
     }
 }
