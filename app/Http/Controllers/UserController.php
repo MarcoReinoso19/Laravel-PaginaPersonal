@@ -54,15 +54,21 @@ class UserController extends Controller
     {
         $data = request()->all();
 
-        User::create([
+        $user  = User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'password' => $data['password']
+        'password' => bcrypt($data['password'])
       ]);
 
-        Role::create([
+      $role = $data['role'];
 
-        ]);
+      $roleID = Role::where('name', '=', $role)->first();
+
+     UserRole::create([
+        'user_id' => $user->id,
+        'role_id' => $roleID->id
+      ]);
+
 
         return back();
     }

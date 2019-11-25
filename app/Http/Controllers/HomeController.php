@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use App\User;
 use App\Role;
 
@@ -61,6 +62,9 @@ class HomeController extends Controller
           $nameRole = 'Sin Rol';
         }
 
+        View::share('nameRole', 'nameUser');
+
         return view('dashboard', compact('nameRole', 'nameUser'));
       }
+
 }

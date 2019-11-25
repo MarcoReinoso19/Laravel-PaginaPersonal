@@ -97,17 +97,18 @@
                       <input type="text" name="email" id="email" class="form-control input-sm">
                       <label>Password</label>
                       <input type="text" name="password" id="password" class="form-control input-sm">
-                      <p></p>
                       <label>Role</label>
+                      <br>
                       <div class="btn-group">
-                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Action
+                         <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <a class="dropdown-text" id="dropdown-text">User</a>
                         </button>
                         <div class="dropdown-menu">
                             <?php foreach ($data as $data): ?>
-                              <a class="dropdown-item" name="role" id="role">{{  $data->name  }}</a>
+                              <a style="cursor: pointer" class="dropdown-item" onclick="enviarTexto()" >{{  $data->name  }}  </a>
                             <?php endforeach; ?>
                         </div>
+                        <input type="hidden" name="role" id="role" class="form-control input-sm" value="User">
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -182,6 +183,29 @@ $('#modalEdicion').on('show.bs.modal', function (e) {
   modal.find('.modal-body #passwordUpdate').val(password)
 
 })
+</script>
+
+
+
+<script>
+        $(function () {
+            $(".dropdown-menu a").click(function () {
+                var text_selected = $(this).text();
+
+                $(".dropdown-text").text(text_selected);
+                $(".role").text(text_selected);
+                document.getElementById("role").value = text_selected;
+
+            });
+
+        });
+</script>
+
+<script>
+  function enviarTexto(){
+    var texto  = document.getElmentById("dropdown-text").value;
+    document.getElementById("role").value = texto;
+  }
 </script>
 
 @endsection

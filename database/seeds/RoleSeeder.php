@@ -17,15 +17,15 @@ class RoleSeeder extends Seeder
         DB::table('roles')->truncate();
 
         Role::create([
-          'name' =>'administrator'
+          'name' =>'Administrator'
         ]);
 
         Role::create([
-          'name' =>'user'
+          'name' =>'User'
         ]);
 
         Role::create([
-          'name' =>'spectator'
+          'name' =>'Spectator'
         ]);
 
     }

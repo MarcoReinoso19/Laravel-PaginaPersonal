@@ -14,7 +14,7 @@ class User_RoleSeeder extends Seeder
     public function run()
     {
 
-      DB::table('users_roles')->truncate();
+      /*DB::table('users_roles')->truncate();
 
       UserRole::create([
         'user_id' =>'1',
@@ -29,6 +29,6 @@ class User_RoleSeeder extends Seeder
       UserRole::create([
         'user_id' =>'2',
         'role_id' =>'3'
-      ]);
+      ]);*/
     }
 }

@@ -43,12 +43,14 @@
       <li class="nav-item active">
         <a class="nav-link" href="{{ url('dashboard') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          @if( $nameRole == 'administrator' )
+          @if( $nameRole ?? '' == 'administrator' )
           <span>Administrator</span></a>
-          @elseif( $nameRole == 'user' )
+          @elseif( $nameRole ?? '' == 'user' )
           <span>User</span></a>
-          @else
+          @elseif( $nameRole ?? '' == 'user' )
           <span>Spectator</span></a>
+          @else
+          <span>Dashboard</span></a>
           @endif
 
       </li>
@@ -98,6 +100,28 @@
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Roles
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link">
+
+          <?php $user = auth()->user()   ?>
+          <?php foreach ($user->roles as $role): ?>
+            <i class="fas fa-id-card-alt"></i>
+              <span>{{  $role->name  }}</span>
+               <br><br>
+          <?php endforeach; ?>
+
+        </a>
       </li>
 
       <!-- Divider -->
@@ -306,7 +330,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $nameUser }}</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $nameUser ?? '' }}</span>
                 <img class="img-profile rounded-circle" src="{{ url('/img/perfil.png') }}">
               </a>
               <!-- Dropdown - User Information -->
@@ -663,24 +687,28 @@
     </div>
   </div>
 
+  <script src="{{ asset('alertifyjs/alertify.js') }}"></script>
+  <script src="{{ asset('js/functions.js') }}"></script>
+
   <script src="http://localhost:35729/livereload.js"></script>
+  <script src="https://kit.fontawesome.com/248cde9816.js" crossorigin="anonymous"></script>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 
 </body>
 
